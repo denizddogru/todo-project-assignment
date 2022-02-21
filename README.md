@@ -4,9 +4,9 @@ Startupfon assignment, user authentication using Flask
 
 # Some command-line information to run the program:
 
-export FLASK_ENV=app.py // sets the run environment
-export FLASK_DEV=development // runs in debug mode
-poetry run flask run // we installed flask on poetry so run poetry first
+- export FLASK_ENV=app.py // sets the run environment
+- export FLASK_DEV=development // runs in debug mode
+- poetry run flask run // we installed flask on poetry so run poetry first
 
 
 # Db connection command-line stats
