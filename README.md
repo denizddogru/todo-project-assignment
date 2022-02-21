@@ -1,7 +1,3 @@
-# todo-project-startupfon
-
-Startupfon assignment, user authentication using Flask 
-
 
 # Some command-line information to run the program:
 
