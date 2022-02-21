@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "todo_backend"
+version = "0.1.0"
+description = ""
+authors = ["deniz"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "^2.0.3"
+peewee = "^3.14.9"
+Flask-Admin = "^1.6.0"
+Flask-Login = "^0.5.0"
+mysqlclient = "^2.1.0"
+Flask-JWT-Extended = "^4.3.1"
+Flask-Mail = "^0.9.1"
+Authomatic = "^1.0.0"
+requests = "^2.27.1"
+wtf-peewee = "^3.0.3"
+flask-crontab = "^0.1.2"
+flask-peewee = "^3.0.4"
+form = "^0.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
