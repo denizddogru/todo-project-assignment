@@ -15,8 +15,12 @@ PYTHONPATH=./main poetry run python main/create_table.py // run the create_table
 
 - fire up another terminal
 
--sqlite3
--./open database.db. // opens a new database file
--./tables ->display created tables
--select * from * user;  //display registered users
--drop table user; // test: change on the user models will not be displayed if running tables are not dropped and re-runned
+- sqlite3
+
+- ./open database.db. // opens a new database file
+
+- ./tables ->display created tables
+
+- select * from * user;  //display registered users
+
+- drop table user; // test: change on the user models will not be displayed if running tables are not dropped and re-runned
