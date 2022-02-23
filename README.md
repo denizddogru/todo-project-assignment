@@ -1,9 +1,9 @@
 
-# Some command-line information to run the program:
+# RUN PROGRAM, add dependencies through pyproject.toml
 
-- export FLASK_ENV=app.py // sets the run environment
+- PYTHONPATH=./main poetry run python main/app.py // runs the app file 
 - export FLASK_DEV=development // runs in debug mode
-- poetry run flask run // we installed flask on poetry so run poetry first
+
 
 ------------------------------------------------------
 
@@ -16,3 +16,10 @@ PYTHONPATH=./main poetry run python main/create_table.py // run the create_table
 - ./tables ->display created tables
 - select * from * user;  //display registered users
 - drop table user; // test: change on the user models will not be displayed if running tables are not dropped and re-runned
+
+
+---
+23 February
+- register user and add them to the database
+- login schema and check_password to verify login
+- 
