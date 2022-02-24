@@ -3,6 +3,7 @@ from flask import Blueprint, request, jsonify
 from app import db
 from form import *
 from flask_peewee.db import Database
+from peewee import CharField, BooleanField
 api = Blueprint("route_api", __name__)
 from models.user import User
 
@@ -14,11 +15,15 @@ def register():
 
     user_request_data = request.get_json()
     
+    _user = User.select().where(User.username == user_request_data["username"]).first()
+
+    if _user:
+        return jsonify({"status":"fail", "message" :"User already exists."})
+        
     with db.database.atomic():
         user = User.create(username=user_request_data["username"], password=user_request_data["password"],
                            )
-
-    return jsonify({"message": "Registration successfull."})
+    return jsonify({"status":"success", "message": "Registration successfull."})
 
 
 
@@ -30,6 +35,7 @@ def validate_user():
     with db.database.atomic():
         user = User.select().where(User.username == user_request_data["username"]).first()
 
+  
     if not user:
         return jsonify({"status" : "fail", "message" : "user not found"})
     return jsonify({"status": "success" , "message" : "login successfull"})
