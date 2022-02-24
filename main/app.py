@@ -1,7 +1,10 @@
 from form import *
-from flask import Flask,jsonify
-# flask-peewee bindings
+from flask import Flask, jsonify, Blueprint
 from flask_peewee.db import Database
+# from webargs.flaskparser import use_args
+from marshmallow import fields
+from flask import request
+
 
 
 # configure our database
@@ -13,25 +16,16 @@ DATABASE = {
 DEBUG = True
 SECRET_KEY = 'ssshhhh'
 
+# configure application
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+
+# app'içinde db var
 db = Database(app)
-
-
-#routing
-
-
-from models.user import User
-
-
-@app.route('/register_user', methods=['POST'])
-def register():
-    with db.database.atomic():
-        user = User.create(username="yasin2",password = "pass123",email="email@test.com",is_superuser=True)
-        
-    return jsonify({"username" : "xyz"})
-
+from api.routes import api as route_api
+app.register_blueprint(route_api, url_prefix="/api")
+  
 
 
 
