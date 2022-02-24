@@ -1,5 +1,5 @@
-# todo-project-startupfon
-Startupfon assignment, user authentication using Flask 
+# todo-project
+assignment, user authentication using Flask 
 
 
 export FLASK_APP=main/app:app    
